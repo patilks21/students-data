@@ -45,6 +45,8 @@
 
     
     <br>
-    <p (click)="onSave()">click to save</p>
+    <button type="button" class="btn btn-primary" (click)="onSave()">click to save</button>
+    <br>
+    <p class="successMsg" *ngIf="isSuccess">The Update is Successful</p>
   </div>
   

@@ -17,7 +17,10 @@ export class UpdateDataComponent {
   address:string='';
   house:string=''
   id:number=0;
-;
+  isSuccess:boolean;
+  constructor(){
+    this.isSuccess = false;
+  }
   onSelectChange(id:any){
     console.log(id);
     let student = JSON.parse(JSON.stringify(_.filter(
@@ -51,6 +54,7 @@ export class UpdateDataComponent {
       }
     )));
     updatestudent.reset();
+    this.isSuccess = true;
     this.newStudentData.emit(updatedData);
   }
 }

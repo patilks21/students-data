@@ -54,22 +54,15 @@
             </div>
             <br>
             <div class="row">
-                <div class="col-md-2">
-                    <label class="formLbl">Upload Student's Picture</label>
-                </div>
-                <div class="col-md-10">
-                    <input type="file" >
-                </div>
-            </div>
-            <div class="row">
                 <div class="col-md-6">
                     <p class="resetbtn"><input type="reset"></p>
                     
                 </div>
                 <div class="col-md-6">
-                    <p><input type="submit" value="Add Student"></p>
+                    <p><input type="submit" value="Update Data"></p>
                 </div>
             </div>
+            <p class="successMsg" *ngIf="isSuccess">The Update is Successful</p>
         </div>
     </form>
 </div>

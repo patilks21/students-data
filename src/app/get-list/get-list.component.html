@@ -4,7 +4,6 @@
     <thead>
     <tr>
         <th>ID</th>
-        <th>Picture</th>
         <th>Name</th>
         <th>Phone No.</th>
         <th>Email</th>
@@ -15,7 +14,6 @@
     <tbody>
     <tr *ngFor="let student of receivedParentMessage">
         <td>{{student["id"]}}</td>
-        <td><img src="{{student['image']}}"></td>
         <td>{{student["name"]}}</td>
         <td>{{student["mobile"]}}</td>
         <td>{{student["email"]}}</td>

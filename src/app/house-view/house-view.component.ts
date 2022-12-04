@@ -14,8 +14,10 @@ export class HouseViewComponent {
   redHouse:[]=[];
   blueHouse:[]=[];
   finalData:[]=[];
+  isSuccess:boolean;
   constructor() {
     this.finalData = this.receivedParentMessage;
+    this.isSuccess = false;
     //this.receivedParentMessage = [];
  }
 
@@ -54,6 +56,7 @@ export class HouseViewComponent {
         return s['id']
       }
     )));
+    this.isSuccess = true;
     this.changeHouse.emit(this.finalData);
   }
 

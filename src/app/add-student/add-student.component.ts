@@ -15,7 +15,10 @@ export class AddStudentComponent {
   mobile:string='';
   email:string='';
   address:string='';
-  
+  isSuccess:boolean;
+  constructor(){
+    this.isSuccess = false;
+  }
   addStudent(addStudent :NgForm) {
     let maxId = Math.max(...this.idList);
     let newStudentData = {
@@ -28,6 +31,7 @@ export class AddStudentComponent {
       "house":""
     }
     addStudent.reset();
+    this.isSuccess = true;
     this.newStudent.emit(JSON.stringify(newStudentData));
   }
 }
