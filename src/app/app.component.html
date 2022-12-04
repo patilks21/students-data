@@ -1,0 +1,52 @@
+
+<div class="toolbar" role="banner">
+  <a href="http://localhost:4200/" class="icon_logo">
+    <img
+      width="40"
+      alt="Logo"
+      src="assets/Home_Icon.png"
+    />
+    <span>Student Data Processing System</span>
+  </a>
+</div>
+
+<div class="content-top" role="main">
+
+  <h1>Welcome to Student Data Processing System</h1>
+
+  <p>Manage student data, assign houses and task to students</p>
+</div>
+
+<div class="content" role="main">
+  <div class="card-container">
+    <div class="card" (click)="viewList()">
+     <span>Student List</span>
+    </div>
+
+    <div class="card" (click)="viewForm()">
+     <span>Add Student</span>
+     </div>
+
+    <div class="card"  (click)="viewUpdate()">
+      <span>Update Student Data</span>
+    </div>
+
+    <div class="card" (click)="viewHouse()">
+      <span>House wise view</span>
+    </div>
+
+  </div>
+  <app-get-list [receivedParentMessage]="studentData" *ngIf="studentView" ></app-get-list>
+  <app-add-student (newStudent)="addNewData($event)" [idList]="idList" *ngIf="addStudentView" style="width: 90%;"></app-add-student>
+  <app-house-view (changeHouse)="updateData($event)" [receivedParentMessage]="studentData" *ngIf="houseView" style="width: 90%;"></app-house-view>
+  <app-update-data (newStudentData)="updateData($event)" [receivedParentMessage]="studentData" *ngIf="updateView" style="width: 90%;"></app-update-data>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+

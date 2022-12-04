@@ -1,0 +1,75 @@
+<div class="updateForm">
+    <form #updatestudent="ngForm" ngNativeValidate (ngSubmit)="updateStudent(updatestudent)">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="formLbl">Select the Student</label>
+                </div>
+                <div class="col-md-10">
+                    <select #studentSelect name="selectStudent" ng-model="selectedStudent" (change)="onSelectChange(studentSelect.value)">
+                        <option disabled selected>Select here</option>
+                        <option *ngFor="let student of receivedParentMessage" [value]="student['id']">
+                            {{student.id+' '+student.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="formLbl">First Name</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" required minlength="3" name="fname" class="formITxt" [(ngModel)]="fname">
+                </div>
+                <div class="col-md-2">
+                    <label class="formLbl">Last Name</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" required minlength="3" name="lname" class="formITxt" [(ngModel)]="lname">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="formLbl">Mobile No.</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="text" required minlength="10" maxlength="10" name="mobile" class="formITxt" [(ngModel)]="mobile">
+                </div>
+                <div class="col-md-2">
+                    <label class="formLbl">Email Id</label>
+                </div>
+                <div class="col-md-4">
+                    <input type="email" required name="email" class="formITxt" [(ngModel)]="email">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="formLbl">Address</label>
+                </div>
+                <div class="col-md-10">
+                    <textarea rows="2" cols="30" name="address" [(ngModel)]="address" required></textarea>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="formLbl">Upload Student's Picture</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="file" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="resetbtn"><input type="reset"></p>
+                    
+                </div>
+                <div class="col-md-6">
+                    <p><input type="submit" value="Add Student"></p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

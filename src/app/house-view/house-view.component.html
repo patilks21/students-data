@@ -1,0 +1,50 @@
+<div cdkDropListGroup>
+    
+    <div class="example-container">
+      <h2>Unassigned Students</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="unassignedStudents"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let student of unassignedStudents" cdkDrag>{{student['name']}}</div>
+      </div>
+    </div>
+    <div class="contaier">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="example-container">
+                    <h2>Red House</h2>
+                
+                    <div
+                      cdkDropList
+                      [cdkDropListData]="redHouse"
+                      class="example-list"
+                      (cdkDropListDropped)="drop($event)">
+                      <div class="example-box" *ngFor="let student of redHouse" cdkDrag>{{student['name']}}</div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="example-container">
+                    <h2>Blue House</h2>
+                
+                    <div
+                      cdkDropList
+                      [cdkDropListData]="blueHouse"
+                      class="example-list"
+                      (cdkDropListDropped)="drop($event)">
+                      <div class="example-box" *ngFor="let student of blueHouse" cdkDrag>{{student['name']}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <br>
+    <p (click)="onSave()">click to save</p>
+  </div>
+  
