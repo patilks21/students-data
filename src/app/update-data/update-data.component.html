@@ -34,7 +34,7 @@
                     <label class="formLbl">Mobile No.</label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" required minlength="10" maxlength="10" name="mobile" class="formITxt" [(ngModel)]="mobile">
+                    <input type="text" required name="mobile" class="formITxt" [(ngModel)]="mobile" pattern="[1-9]{1}[0-9]{9}">
                 </div>
                 <div class="col-md-2">
                     <label class="formLbl">Email Id</label>
