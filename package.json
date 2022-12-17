@@ -1,6 +1,7 @@
 {
   "name": "students-data",
   "version": "0.0.0",
+  "homepage" : "https://patilks21.github.io/students-data/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
